@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c6bcef1b6d113a428bdfabb1392536a, type: 3}
+  m_Name: Michou
+  m_EditorClassIdentifier: 
+  name: 'Michou le Cartophile '
+  description: "Originaire d\u2019Ard\xE8che, Michou a su exprimer sa passion \xE0
+    travers les timbres pendant de longues ann\xE9es.  De par sa t\xE9nacit\xE9 sans
+    faille mais aussi ses recherches pouss\xE9es dans des milieux mafieux, il est
+    parvenu \xE0 int\xE9grer la secr\xE8te secte Tradition l\xE9chouille.  Cette
+    derni\xE8re combat toute forme d\u2019adh\xE9sifs ou m\xE9thodes se substituant
+    au coup de langue pour coller un timbre.   Il esp\xE8re enfin passer au rang
+    sup\xE9rieur afin de ne plus \xEAtre confondu avec les gens bizarres qui collectionnent
+    des bouts de papiers, les Cartophiles. "
+  nbHealth: 3
+  nbReason: 6
+  statEtrange: 8
+  statDemon: 4
+  statRational: 6
