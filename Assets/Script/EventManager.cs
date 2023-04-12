@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,20 +11,42 @@ public class EventManager : MonoBehaviour
     public TMP_Text entete;
     public TMP_Text description;
 
+    public int difficultyModifier;
     public Color defaultColor;
 
     public GameEngine currentGE;
 
+    public bool eventOn;
+    public CardObject linkObject;
+    public GameObject currentPlaceHolder;
+
 
     void OnMouseOver()
     {
-        GetComponent<Renderer>().material.color = Color.red;
+        if (eventOn)
+        {
+            GetComponent<Renderer>().material.color = Color.red;
+            if (linkObject != null && currentPlaceHolder.GetComponent<ObjectManager>().titre.text != linkObject.name)
+            {
+                currentPlaceHolder.SetActive(true);
+                currentPlaceHolder.transform.localScale = new Vector3(200,200,25);
+                currentPlaceHolder.GetComponent<ObjectManager>().ChangeText(linkObject, true);
+            }
+        }
 
     }
 
     void OnMouseExit()
     {
-        GetComponent<Renderer>().material.color = defaultColor;
+        if (eventOn)
+        {
+            GetComponent<Renderer>().material.color = defaultColor;
+            if (linkObject != null)
+            {
+                currentPlaceHolder.transform.localScale = new Vector3(0, 0, 25);
+                currentPlaceHolder.SetActive(false);
+            }
+        }
 
     }
     // Start is called before the first frame update
@@ -32,6 +54,9 @@ public class EventManager : MonoBehaviour
     {
         defaultColor = GetComponent<Renderer>().material.color;
         currentGE = GameObject.FindWithTag("GameController").GetComponent<GameEngine>();
+        eventOn = true;
+        currentPlaceHolder = GameObject.FindWithTag("ObjectPlaceHolder");
+
     }
 
     // Update is called once per frame
@@ -43,27 +68,33 @@ public class EventManager : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (currentGE.RollDice(currentCardEvent.type, currentCardEvent.difficulty))
+        if (eventOn)
         {
-            Debug.Log("Win");
-            currentGE.ApplyEventEffect(currentCardEvent.winEffect);
-        }
-        else
-        {
-            Debug.Log("Lose");
-            currentGE.ApplyEventEffect(currentCardEvent.loseEffect);
+            if (currentGE.RollDice(currentCardEvent.type, currentCardEvent.difficulty + difficultyModifier))
+            {
+                Debug.Log("Win");
+                currentGE.ApplyEventEffect(currentCardEvent.winEffect);
+            }
+            else
+            {
+                Debug.Log("Lose");
+                currentGE.ApplyEventEffect(currentCardEvent.loseEffect);
 
-        }
+            }
 
+
+            GetComponent<Renderer>().material.color = Color.grey;
+            transform.parent.GetComponent<CardManager>().finishCard();
+        }
     }
 
-    string TranslateEventEffectInString(EventEffect currentEventEffect)
+    string TranslateEventEffectInString(EventEffect currentEventEffect, char checkMark)
     {
-        string currentDescription = " - " + currentEventEffect.textEvenEffect ;
-        if (currentEventEffect.typeEffect != null)
+        string currentDescription = " "+ checkMark + " " + currentEventEffect.textEvenEffect ;
+        if (currentEventEffect.typeEffect != "rien")
         {
             currentDescription += '\n' + "    ";
-            if (currentEventEffect.typeEffect != "object")
+            if (currentEventEffect.objectReward == null)
             {
                 if (currentEventEffect.effectGain > 0)
                 {
@@ -76,6 +107,10 @@ public class EventManager : MonoBehaviour
                 currentDescription += "+" + currentEventEffect.objectReward.name;
             }
         }
+        if (currentEventEffect.objectReward != null)
+        {
+            linkObject = currentEventEffect.objectReward;
+        }
         return currentDescription;
     }
 
@@ -85,9 +120,26 @@ public class EventManager : MonoBehaviour
 
         entete.text = currentCardEvent.type + " " + currentCardEvent.difficulty.ToString();
 
+        description.text = currentCardEvent.description + '\n' + TranslateEventEffectInString(currentCardEvent.winEffect, '√') + '\n' + TranslateEventEffectInString(currentCardEvent.loseEffect, 'X');
 
+    }
 
-        description.text = currentCardEvent.description + '\n' + TranslateEventEffectInString(currentCardEvent.winEffect) + '\n' + TranslateEventEffectInString(currentCardEvent.loseEffect);
+    public void UpdateDifficulty(int newDifficultyModifier)
+    {
+        difficultyModifier += newDifficultyModifier;
 
+        entete.text = currentCardEvent.type + " " + (currentCardEvent.difficulty + difficultyModifier).ToString();
+        if (difficultyModifier < 0)
+        {
+            entete.color = Color.green;
+        }
+        else if (difficultyModifier > 0)
+        {
+            entete.color = Color.red;
+        }
+        else
+        {
+            entete.color = Color.white;
+        }
     }
 }

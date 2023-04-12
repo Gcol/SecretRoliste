@@ -1,4 +1,48 @@
-Name,Desc,Effect
-Savoir cach�,Ils nous mentent ! Vous ne savez pas exactement qui sont ces �ils� mais s�rement un groupuscule puissant manipulant nos vies dans l�ombre. En y repensant votre voisin organise des sardinades. Cette fa�ade ne dupe pas un esprit aussi �clair� que vous.,+4 au r�sultat d�un jet �trange
-�ponge lunaire,Une tache tenace ? Marre de passer vos matin�es � frotter le sol de votre garage pour nettoyer les restes de vos soir�es endiabl�es de rituels entre amis ? ,+1 Sant�
-Liste des riches bougiste,"Ils sont peu mais poss�dent presque tout. Des bougies parfum�es pour chasser les mauvais esprits des sanitaires aux mod�les les plus luxueux, leur empire est vaste. Ce sont les 1%. ",+2 au r�sultat d�un jet rationnel
+"Name","Desc","Effect","TypeEffect","EffectGain","EOL"
+"Savoir caché","Ils nous mentent ! Vous ne savez pas exactement qui sont ils mais sûrement un groupuscule puissant manipulant nos vies dans l’ombre. En y repensant votre voisin organise des sardinades. Cette façade ne dupe pas un esprit aussi éclairé que vous.","+4 au résultat d’un jet étrange","étrange","-4","EOL"
+"éponge lunaire","Une tache tenace ? Marre de passer vos matinées à frotter le sol de votre garage pour nettoyer les restes de vos soirées endiablées de rituels entre amis ? ","+1 Santé","santé","-1","EOL"
+"Liste des riches bougistes","Ils sont peu mais possèdent presque tout. Des bougies parfumées pour chasser les mauvais esprits des sanitaires aux modèles les plus luxueux, leur empire est vaste. Ce sont les 1%. ","+2 au résultat d’un jet rationnel","rationnel","-2","EOL"
+"Manuel des lunes invisibles","Beaucoup réfutent l’existence des choses qu’ils ne parviennent pas à voir. Pourtant le monde de l'invisible ne demande qu’à être vu. 
+Chaque jour, des esprits éclairés recensent et détaillent les 45 885 687,223 lunes de notre système solaire. 
+En ce moment, vous êtes peut-être accoudé à une lune.","+1 au résultat d’un jet étrange","étrange","-1","EOL"
+"Subvention A38","Comme précisé par la circulaire Vb12.46 introduite par l'article 23.54.23, l’inversion d’un inverse est à opposer après avoir apposé le dépôt.   PS : Uniquement les jours fériés. ","Inverser les effets de réussite et d’échec d’une carte événement","inverser","0","EOL"
+"Anatidaephobie","Certains imaginent qu’un petit groupe contrôle nos vies, d’autres pensent que nos dirigeants les plus éminents sont des reptiliens. Tous se trompent. Ce sont les canards qui sont au commande. La prochaine fois que vous vous faites du magret, vous remarquerez qu’il vous arrive rapidement après un malheur.  ILS NOUS OBSERVENT ! ","-2 Raison ET +4 au résultat d’un jet étrange","raison+étrange","-2,-4","EOL"
+"Fidèle naïf","On dit souvent que tout ce qui est avant le “mais” ne compte pas. 
+Pourtant il est gentil, serviable, attentionné, ponctuel, connaît sa gauche et sa droite, sait écouter MAIS il réfléchit moins qu’un miroir repeint que l’on aurait fixé à l’envers au mur derrière un rideau.","Réduit de 1 un malus sur la Santé ou la Raison","réductionMalus","-1","EOL"
+"Rêves brisés","Cette nuit j'ai fait un rêve, je gagnais 1 million de sesterces... Et avec je m'achetais une paire de chaussure, trop grande et puis moche en plus !
+Comme pourrait le témoigner ce soldat, certains rêves peuvent être brisés sans gènes.","+2 au résultat d’un jet rationnel","rationnel","-2","EOL"
+"Retour vers le passé 3","Après son voyage mouvementé entre passé, présent et futur, Kévin Dupont apprend par un email vieux de 20 minutes que son ami Pseudodu91 a besoin d’un chargeur de téléphone pour finir de regarder le dernier live de Rihanna. Arrivera-t’il à temps avant que le pire arrive ? ","En cas d’échec, possibilité de choisir une autre action (sans subir les effets de la première action)","changeAction","0","EOL"
+"Nettoyeur fou","La moindre tache vous rend dingue !
+Vous connaissez toutes les astuces de grand-mère, possédez tous les logiciels de To Do List et connaissez par cœur le raccourci Ctrl + Maj + Echap.","-1 Raison ET +2 au résultat d’un jet démon","raison+démon","-1,-2","EOL"
+"Carte de passeur","Cette carte est réservée aux plus grands et talentueux passeurs. Triés sur le volet, qu’ils soient des rugbymans ou des franchisseurs de frontières, tous rêvent de posséder ce petit carton, symbole de prestige ultime.
+PS : Sert aussi de bon de réduction de -15% chez Passoire & Co.","Permet d’ignorer un événement","ignore","0","EOL"
+"Clés des enfers","On se méprends souvent sur la forme de cette clé. Parfois paire de ciseaux, single commercial, verre de trop. Sa forme n’est pas définie. 
+Dites vous juste qu’à chaque fois que la situation part en vrille, vous avez sûrement détenu une clé des enfers. Ou alors c’est juste la poisse, ça arrive aussi.","+3 au résultat d’un jet démon","démon","-3","EOL"
+"Meute de chiens géants","Ils sont gros.
+Ils sont poilus.
+Ils sont grands.
+Ils mangent l’équivalent d’un SMIC en viande par jour.","Lance 3 fois un jet et garde le meilleur résultat","relance3","0","EOL"
+"Educateur de poilu","Au pied, donne la patte, fais le beau, va chercher ma fierté que j’ai perdu pendant mon enfance.
+Tant que ça a beaucoup de poils, vous savez le mettre au pas.
+Néanmoins votre poisson rouge ne vous respecte toujours pas.  ","+2 au résultat d’un jet démon","démon","-2","EOL"
+"Chef cuistot à plumes","Trop longtemps reléguée au simple besoin de s’alimenter, la cuisine aviaire a enfin quitté son nid pour voler de ses propres ailes. 
+De fiers chefs repoussent les limites culinaires gastronomiques ravissant les oisillons à l’appétit infini aux colombes habituées aux grands palaces parisiens.","+1 au résultat d’un jet étrange","étrange","-1","EOL"
+"Service de phénix","L’adage ”je m’engage jusqu’à ce que la mort me délivre de mon serment” n’a pas la même portée pour un être immortel. 
+Bon, ne vous enflammez pas non plus, on reste sur un petite service, du genre tondre le gazon, faire la vaisselle ou promener vos chiens.","En cas d'échec, relancer un jet","relanceEchec","0","EOL"
+"Coup de main divin","Si l’on y réfléchit, un cou de main, c’est le poignet non ? 
+Mais du coup les doigts sont les cheveux. 
+Et donc, avoir des doigts de fées est un compliment capillaire.
+CQFD","+2 au résultat d’un jet étrange","étrange","-2","EOL"
+"Fidèles du petit devin","Un petit être à réussi à réunir plus de fidèles que le dernier chanteur du hit parade de la semaine dernière. Ils lui sont dévoués corps et âme. 
+De vôtre côté, vous ne parvenez pas à vous faire respecter par votre poule qui va trop souvent voir ailleurs.","-1 Santé ET +2 Raison","santé+raison","-1,-2","EOL"
+"Vérité qui dérange","Quand vos parents répétaient sans cesse “tu comprendras quand tu seras grand”, ce n’était pas parce que vous étiez trop jeune.   Acceptez la vérité en face.  Vous étiez vraiment pénible avec toutes vos questions. ","+1 au résultat d’un jet rationnel","rationel","-1","EOL"
+"Détecteur de palindrome","Ésope reste élu par cette crapule et se repose. ","Réduit de 2 un malus sur la Raison","malusRaison","-2","EOL"
+"Liste des célibataires du quartier ","Jeune entité cosmique cherche âme à libérer de ses fardeaux quotidiens. 
+Rencontre d’un soir seulement, engagements et sacrements éternels refusés.","+3 Raison","raison","-3","EOL"
+"Cadeau infernal","Incroyable ! 
+Du baume du diable ! 
+On dit que cette pommade adoucit tous les maux. 
+Par contre ce trésor est emballé dans des bouts de tissus vous rappelant vos chaussettes préférées. ","+2 Santé ET -1 Raison","santé+raison","2,-1","EOL"
+"Badge roche","Jolie petite broche brillante qui attire des gros blocs de granit. 
+Ces derniers font tout ce qu’ils peuvent pour attirer vos faveurs, repasser vos chaussons de cérémonie, faire vos déclarations d'impôts et même parfois des spectacles d'aérobic très bruyants.","Permet d’ignorer les effets négatifs d’une carte 
+(Santé et Raison)","ignoreNéga","0","EOL"
