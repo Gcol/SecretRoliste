@@ -15,4 +15,8 @@ public class Character : ScriptableObject
     public int statEtrange;
     public int statDemon;
     public int statRational;
+
+    public GameObject diceEtrange;
+    public GameObject diceDemon;
+    public GameObject diceRational;
 }

@@ -10,7 +10,7 @@ public class ObjectManager : MonoBehaviour
     public Color defaultColor;
     public bool isOverlay;
     public bool isActive;
-    public Vector2 previousPosition;
+    public Vector3 previousPosition;
 
     public string typeEffect;
     public string gainEffect;
@@ -18,6 +18,8 @@ public class ObjectManager : MonoBehaviour
     public TMP_Text titre;
     public TMP_Text description;
     public TMP_Text effet;
+
+    public int tempZ;
 
     public GameEngine currentGE;
 
@@ -28,12 +30,13 @@ public class ObjectManager : MonoBehaviour
             renderer.material.color = Color.red;
 
         }
-        if (!isOverlay && gameObject.transform.localPosition.y != -0.12f)
+        if (!isOverlay && gameObject.transform.localPosition.y != 0f)
         {
+            previousPosition = gameObject.transform.localPosition;
             Vector3 p = gameObject.transform.localPosition;
-            previousPosition = new Vector2(p.x, p.y);
-            p.y = -0.12f;
-            p.x = 0.03f;
+            p.z = p.z + tempZ * 0.126f;
+            p.y = 0f;
+            p.x = -1f;
             gameObject.transform.localPosition = p;
 
         }
@@ -42,6 +45,7 @@ public class ObjectManager : MonoBehaviour
 
     public void DeleteObject()
     {
+        currentGE.inventory.GetComponent<InventoryManager>().DeleteObject(gameObject);
         Destroy(gameObject);
     }
 
@@ -49,11 +53,7 @@ public class ObjectManager : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (isOverlay)
-        {
-            Debug.Log("Faudrait Zoomer");
-        }
-        else
+        if (!isOverlay)
         {
             if (!isActive)
             {
@@ -79,10 +79,7 @@ public class ObjectManager : MonoBehaviour
         }
         if (!isOverlay)
         {
-            Vector3 p = gameObject.transform.localPosition;
-            p.y = previousPosition.y;
-            p.x = previousPosition.x;
-            gameObject.transform.localPosition = p;
+            gameObject.transform.localPosition = previousPosition;
         }
 
     }
@@ -96,10 +93,6 @@ public class ObjectManager : MonoBehaviour
 
     public void ChangeText(CardObject newObject, bool newIsOverlay = false)
     {
-        if (!newIsOverlay)
-        {
-            Debug.Log("Ajout de l objet" + newObject.name);
-        }
         titre.text = newObject.name;
         description.text = newObject.description;
         effet.text = newObject.effect;

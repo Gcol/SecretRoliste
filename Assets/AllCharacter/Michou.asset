@@ -26,3 +26,9 @@ MonoBehaviour:
   statEtrange: 8
   statDemon: 4
   statRational: 6
+  diceEtrange: {fileID: 3126703454678736473, guid: d4494824b25ed624d86037d8ee7677b5,
+    type: 3}
+  diceDemon: {fileID: 1706436757665053943, guid: 4e2945c97f03a5f47bf90b2d7db5a63b,
+    type: 3}
+  diceRational: {fileID: 5555479622647981798, guid: 7a139595a80e68f4c80666da830291b3,
+    type: 3}

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - ObjectPlaceHolder
+  - "D\xE9monDice"
+  - RationalDice
+  - StrangeDice
   layers:
   - Default
   - TransparentFX
